@@ -5,26 +5,3 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
-
-class Seed
-
-  def self.begin
-    seed = Seed.new
-    seed.generate_things
-  end
-
-  def generate_things
-    5.times do |i|
-      thing = Thing.create!(
-        name: Faker::Book.author,
-        content: Faker::Movie.quote,
-        rating: Faker::Number,
-        tag: Faker::Book.author
-      )
-      puts "thing #{i}: Author is #{thing.name} and quotation is '#{thing.content}'."
-    end
-  end
-end
-
-Seed.begin

@@ -1,8 +1,8 @@
 class CommentsController < ApplicationController
 
   def index
-    @things = Thing.find(params[:thing_id])
-    @comments = @things.comments.all
+    @thing = Thing.find(params[:thing_id])
+    @comments = @thing.comments.all
     json_response(@comments)
   end
 

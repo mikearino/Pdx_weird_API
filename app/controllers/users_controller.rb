@@ -1,4 +1,4 @@
 class UsersController  < ApplicationController
-  
+
 
 end
