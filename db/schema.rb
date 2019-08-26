@@ -10,9 +10,50 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2019_08_26_173228) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "comments", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "thing_id"
+    t.string "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "favorite_things", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "things_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["things_id"], name: "index_favorite_things_on_things_id"
+    t.index ["user_id"], name: "index_favorite_things_on_user_id"
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.integer "thing_id"
+    t.integer "lat"
+    t.integer "long"
+  end
+
+  create_table "things", force: :cascade do |t|
+    t.string "name"
+    t.string "content"
+    t.integer "rating"
+    t.string "tag"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "comments", "things"
+  add_foreign_key "comments", "users"
+  add_foreign_key "locations", "things"
 end
