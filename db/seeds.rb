@@ -1,19 +1,19 @@
-# things_list = [
-#   ["Zoobomb", "Drink PBR at the Zoo and then bomb the hill on minibike. Try not to crash.", 5, "#zoobomb"],
-#   ["Witches Castle", "Weird stone house in the woods. Great for spell casting, larping and PBR.", 3, "#Witches Castle"],
-#   ["Lovecraft Bar", "H.P. Lovecraft themed bar post punk madness", 5, "#Lovecraft"],
-#   ["Shanghai Tunnels", "Old tunnels under Portland made by a giant rat.", 4, "#Tunnels"],
-#   ["Chocolate Waterfall", "21 foot waterfall. Gross.", 2, "#Waterfall"],
-#   ["Worlds Smallest Park", "Tiny park in the middle of a busy street.", 2, "#Park"],
-#   ["Plastic Horse", "Tie a Plastic Horse to the Curb.", 2, "#Horse"],
-#   ["Darcelle's", "Go to a drag show.", 2, "#dragshow"],
-#   ["Casa Diablo", "Go to a vegan strip club.", 2, "#stripclub"],
-#   ["Voodo Doughnuts", "Get some weird doughnuts.", 1, "#doughnuts"],
-#   ["Airport Carpet", "Take a picture of your feet at the airport.", 1, "#airport"]
-# ]
-# things_list.each do |n, c, r, t|
-#   Thing.create(name: n, content: c, rating: r, tag: t)
-# end
+things_list = [
+  ["Zoobomb", "Drink PBR at the Zoo and then bomb the hill on minibike. Try not to crash.", 5, "#zoobomb"],
+  ["Witches Castle", "Weird stone house in the woods. Great for spell casting, larping and PBR.", 3, "#Witches Castle"],
+  ["Lovecraft Bar", "H.P. Lovecraft themed bar post punk madness", 5, "#Lovecraft"],
+  ["Shanghai Tunnels", "Old tunnels under Portland made by a giant rat.", 4, "#Tunnels"],
+  ["Chocolate Waterfall", "21 foot waterfall. Gross.", 2, "#Waterfall"],
+  ["Worlds Smallest Park", "Tiny park in the middle of a busy street.", 2, "#Park"],
+  ["Plastic Horse", "Tie a Plastic Horse to the Curb.", 2, "#Horse"],
+  ["Darcelle's", "Go to a drag show.", 2, "#dragshow"],
+  ["Casa Diablo", "Go to a vegan strip club.", 2, "#stripclub"],
+  ["Voodo Doughnuts", "Get some weird doughnuts.", 1, "#doughnuts"],
+  ["Airport Carpet", "Take a picture of your feet at the airport.", 1, "#airport"]
+]
+things_list.each do |n, c, r, t|
+  Thing.create(name: n, content: c, rating: r, tag: t)
+end
 
 
 locations_list = [
