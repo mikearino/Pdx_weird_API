@@ -16,13 +16,13 @@ class Seed
 
   def generate_things
     5.times do |i|
-      thing = thing.create!(
+      thing = Thing.create!(
         name: Faker::Book.author,
         content: Faker::Movie.quote,
         rating: Faker::Number,
         tag: Faker::Book.author
       )
-      puts "thing #{i}: Author is #{thing.author} and quotation is '#{thing.content}'."
+      puts "thing #{i}: Author is #{thing.name} and quotation is '#{thing.content}'."
     end
   end
 end
