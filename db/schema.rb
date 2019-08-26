@@ -23,13 +23,13 @@ ActiveRecord::Schema.define(version: 2019_08_26_173228) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "favorite_things", force: :cascade do |t|
+  create_table "favorite", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "things_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["things_id"], name: "index_favorite_things_on_things_id"
-    t.index ["user_id"], name: "index_favorite_things_on_user_id"
+    t.index ["things_id"], name: "index_favorite_on_things_id"
+    t.index ["user_id"], name: "index_favorite_on_user_id"
   end
 
   create_table "locations", force: :cascade do |t|
