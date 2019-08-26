@@ -66,7 +66,7 @@ comments_list = [
 ]
 
 comments_list.each do |c, tid, uid|
-   Comment.create!(content: c, thing_id: tid, user_id: uid)
+   Comment.create(content: c, thing_id: tid, user_id: uid)
 end
 
 
