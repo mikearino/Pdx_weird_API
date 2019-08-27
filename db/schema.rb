@@ -34,8 +34,8 @@ ActiveRecord::Schema.define(version: 2019_08_26_173228) do
 
   create_table "locations", force: :cascade do |t|
     t.integer "thing_id"
-    t.integer "lat"
-    t.integer "long"
+    t.decimal "lat"
+    t.decimal "long"
   end
 
   create_table "things", force: :cascade do |t|
