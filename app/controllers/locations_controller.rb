@@ -13,8 +13,8 @@ class LocationsController < ApplicationController
   end
 
   def show
-    @thing = Thing.find(params[:thing_id])
-    @location = @thing.locations.find(params[:id])
+    @thing = Thing.find(params[:id])
+    @location = Location.find(@thing.id)
     json_response(@location)
   end
 
@@ -46,6 +46,6 @@ class LocationsController < ApplicationController
 
   private
   def location_params
-    params.permit(:lat, :long)
+    params.permit(:lat, :long, :thing_id)
   end
 end
