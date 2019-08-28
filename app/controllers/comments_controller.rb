@@ -1,8 +1,14 @@
 class CommentsController < ApplicationController
 
   def index
-    @thing = Thing.find(params[:thing_id])
-    @comments = @thing.comments.all
+    @comments = nil
+    if params.key?(:user_id)
+      @user = User.find(params[:user_id])
+      @comments = @user.comments.all
+    end
+      @thing = Thing.find(params[:thing_id])
+      @comments = @thing.comments.all
+    else
     json_response(@comments)
   end
 
@@ -46,6 +52,6 @@ class CommentsController < ApplicationController
 
   private
   def comment_params
-    params.permit(:content)
+    params.permit(:content, :thing_id, :user_id)
   end
 end
