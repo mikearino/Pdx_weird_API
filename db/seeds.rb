@@ -16,7 +16,7 @@ things_list.each do |n, c, r, t|
 end
 
 locations_list = [
-  [45.523105, -122.684060, Thing.all.sample.id],
+  [45.523105, -122.684060, Thing.where({name: "Zoobomb"})],
   [45.528543, -122.725066, Thing.all.sample.id],
   [45.520089, -122.660916, Thing.all.sample.id],
   [45.524367, -122.673238, Thing.all.sample.id],
@@ -50,7 +50,7 @@ users_list.each do |n|
 end
 
 comments_list = [
-  ["Zoobomb is a weekly bicycling activity in Portland, Oregon, United States during which participants ride bicycles rapidly downhill in the city's West Hills. Zoobomb began in 2002. Participants carry their bikes on MAX Light Rail to the Washington Park station next to the Oregon Zoo.", Thing.all.sample.id, User.all.sample.id],
+  ["Zoobomb is a weekly bicycling activity in Portland, Oregon, United States during which participants ride bicycles rapidly downhill in the city's West Hills. Zoobomb began in 2002. Participants carry their bikes on MAX Light Rail to the Washington Park station next to the Oregon Zoo.", Thing.where({name: "Zoobomb"}), User.all.sample.id],
   ["In the mid-1800s, well before the structure was built, a man named Danford Balch bought a large portion of land around the area while Portland was still in the process of being developed. It was a big enough area that he had to hire help to clear the area, so he hired a man named Mortimer Stump, who lived in the cabin on the property with Balch’s family of 10. Over time, Stump and Balch’s daughter Anna fell in love, and eventually Stump asked Balch for his Anna’s hand in marriage. Balch refused, resulting in Stump and Anna threatening to elope. Balch became infuriated and told Stump that he would murder him if they did. The young couple didn’t heed the warning, and decided to elope in November of 1858.", Thing.all.sample.id, User.all.sample.id],
   ["The Lovecraft is a horror-themed bar with local art and decor, a small dance floor, and different themed nights ranging from 80s, industrial and goth, metal, bellydance, burlesque and performance art, live music, art classes and movie nights.", Thing.all.sample.id, User.all.sample.id],
   ["The Old Portland Underground, better known locally as the Shanghai Tunnels, is a group of passages in Portland, Oregon, United States, mainly underneath the Old Town Chinatown neighborhood and connecting to the main business section. The tunnels connected the basements of many hotels and taverns to the waterfront of the Willamette River. They were originally built to move goods from the ships docked on the Willamette to the basement storage areas, allowing businesses to avoid streetcar and train traffic on the streets when delivering their goods.", Thing.all.sample.id, User.all.sample.id],
@@ -66,25 +66,3 @@ comments_list = [
 comments_list.each do |c, tid, uid|
    Comment.create(content: c, thing_id: tid, user_id: uid)
 end
-
-#
-# def self.begin
-#   seed = Seed.new
-#   seed.generate_thing
-# end
-#
-# def generate_things
-#   10.times do |i|
-#     thing = Thing.create!(
-#       name: Faker::Address.community,
-#       place: Faker::Address.state,
-#       content: Faker::Hipster.sentence
-#     )
-#     rand(1..10).times do |i|
-#       reviews = thing.reviews.create!(
-#         author: Faker::Name.name,
-#         content_body: Faker::Hipster.sentence,
-#         rating: Faker::Number.within(range: 1..10)
-#       )
-#     end
-#     puts "Thing #{i}: name is #{thing.name} and content is '#{thing.content}'"

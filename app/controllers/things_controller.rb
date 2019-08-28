@@ -2,6 +2,9 @@ class ThingsController < ApplicationController
 
   def index
     @things = Thing.all
+    @random = Thing.random
+    @most_comments = Thing.most_comments
+    @recent_three = Thing.recent_three
     json_response(@things)
   end
 
