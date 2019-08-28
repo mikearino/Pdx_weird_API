@@ -1,3 +1,9 @@
+
+Comment.destroy_all
+Location.destroy_all
+Thing.destroy_all
+User.destroy_all
+
 things_list = [
   ["Zoobomb", "Drink PBR at the Zoo and then bomb the hill on minibike. Try not to crash.", 5, "#zoobomb"],
   ["Witches Castle", "Weird stone house in the woods. Great for spell casting, larping and PBR.", 3, "#Witches Castle"],
@@ -8,7 +14,7 @@ things_list = [
   ["Plastic Horse", "Tie a Plastic Horse to the Curb.", 2, "#Horse"],
   ["Darcelle's", "Go to a drag show.", 2, "#dragshow"],
   ["Casa Diablo", "Go to a vegan strip club.", 2, "#stripclub"],
-  ["Voodo Doughnuts", "Get some weird doughnuts.", 1, "#doughnuts"],
+  ["Voodoo Doughnuts", "Get some weird doughnuts.", 1, "#doughnuts"],
   ["Airport Carpet", "Take a picture of your feet at the airport.", 1, "#airport"]
 ]
 things_list.each do |n, c, r, t|
@@ -25,8 +31,8 @@ locations_list = [
   [45.525039, -122.679066, Thing.where({name: "Plastic Horse"})[0].id],
   [45.524905, -122.672964, Thing.where({name: "Darcelle's"})[0].id],
   [45.544149, -122.720691, Thing.where({name: "Casa Diablo"})[0].id],
-  [45.522827, -122.672879, Thing.where({name: "Voodo Doughnuts"})[0].id],
-  [45.589807, -122.595062, Thing.where({name: "Zoobomb"})[0].id]
+  [45.522827, -122.672879, Thing.where({name: "Voodoo Doughnuts"})[0].id],
+  [45.589807, -122.595062, Thing.where({name: "Airport Carpet"})[0].id]
 ]
 locations_list.each do |la, lo, tid|
   Location.create(lat: la, long: lo, thing_id: tid)
