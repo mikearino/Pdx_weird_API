@@ -2,22 +2,19 @@ class ThingsController < ApplicationController
 
   def index
     @response = nil
-    if params.key?request != true
-      @response = Thing.all
+
+    if params[:request] == "random"
+      @response = Thing.random
+    elsif params[:request] == "most_comments"
+      @response = Thing.most_comments
+
+    elsif params[:request] == "recent"
+      @response = Thing.recent_three
     else
-      
-      if params[:request] == "random"
-        @response = Thing.random
-      end
-      if params[:request] == "most_comments"
-        @response = Thing.most_comments
-      end
-      if params[:request] == "recent"
-        @response = Thing.recent_three
-      end
-    end
-    json_response(@response)
+      @response = Thing.all
   end
+  json_response(@response)
+end
 
   def show
     @thing = Thing.find(params[:id])
