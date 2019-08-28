@@ -1,6 +1,6 @@
 class Thing < ApplicationRecord
-  has_many :comments
-  has_many :locations
+  has_many :comments, dependent: :destroy
+  has_many :locations, dependent: :destroy
   has_many :favorite_things
   has_many :users, :through => :favorite_things
 
