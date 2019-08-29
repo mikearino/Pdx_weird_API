@@ -14,7 +14,7 @@ class LocationsController < ApplicationController
 
   def show
     @thing = Thing.find(params[:id])
-    @location = Location.find(@thing.id)
+    @location = Location.where(thing_id: @thing.id)[0]
     json_response(@location)
   end
 
